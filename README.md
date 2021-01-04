@@ -9,3 +9,8 @@ Sheetrock is a JavaScript library for querying, retrieving, and displaying data 
 
 https://www.kunkalabs.com/mixitup/
 Mixitup
+
+
+https://developers.google.com/chart/interactive/docs/querylanguage
+
+            query: "select A, B, C, D, E, F, G where F contains 'UX Design'"
