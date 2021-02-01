@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UX Bubbles</title>
+        <meta name="description" content="A repository of online UX video resources - talks, sharings, conferences.">
+        <meta name="keywords" content="ux resources, videos,">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    </head>
+    <body>
+       
+        <table id="tableone" class="table table-condensed table-striped"></table>
+
+        <script>
+            var Spreadsheet = 'https://docs.google.com/spreadsheets/d/1fiFAzLwETwa_-RVWxSlEaDwewidgOUTKOpqpcls-7zM/edit#gid=0';
+
+            $(document).ready(function(){
+               $('#tableone').sheetrock({
+                url: Spreadsheet,
+                query: "select A, B, C, D, E, F, G where F contains 'UX Design'",
+               });
+            });
+        </script>
+    </body>
+</html>
