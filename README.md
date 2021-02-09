@@ -1,5 +1,4 @@
-# uxbubble
-inspired by travel bubbles 
+# uxhumanlibrary
 
 ---
 
@@ -14,3 +13,4 @@ Mixitup
 https://developers.google.com/chart/interactive/docs/querylanguage
 
             query: "select A, B, C, D, E, F, G where F contains 'UX Design'"
+
