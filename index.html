@@ -11,7 +11,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+        <link href="divfilter.css" rel="stylesheet">
 
 
 
@@ -22,17 +22,25 @@
             <p class="text-center">This is a collection of free-to-watch UX videos from across the internet. </p>
         </div>
 
+        <div class="container text-center" id="myBtnContainer">
+            <button class="btn-filter btn-light active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn-filter btn-light" onclick="filterSelection('figma')"> Figma</button>
+            <button class="btn-filter btn-light" onclick="filterSelection('uxd')"> UX Design</button>
+            <button class="btn-filter btn-light" onclick="filterSelection('researchops')"> ResearchOps</button>
+        </div>
+
         <div class="container">
             
             <div id = "session" class="row">
                 <script id ="session-template" type = "text/x-handlebars-template">
 
-                <div class="col-md-4 my-4">
+                <div class="col-md-4 my-4 filterDiv {{cellsArray.[7]}}">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{cellsArray.[0]}}</h5>
                             <p class="card-text">Speakers: {{cellsArray.[1]}}</p>
-                            <a href="{{cellsArray.[2]}}" class="btn btn-primary">Watch</a>
+                            <p class="card-subtitle">Date: {{cellsArray.[6]}} {{cellsArray.[5]}}</p>
+                            <a href="{{cellsArray.[4]}}" class="btn btn-primary">Watch</a>
                         </div>
                     </div>
                 </div>
@@ -43,6 +51,8 @@
 
         </div>        
 
+        
+
 
         <script type="text/javascript">
 
@@ -52,12 +62,14 @@
 
             $('#session').sheetrock({
                 url: Spreadsheet,
-                fetchSize: 10, 
+                query: "select A,B,C,E,F,G,H,K order by J desc",
                 rowTemplate: SessionTemplate
             });
 
         </script>
-
+        
+        <script src="divfilter.js"></script>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     </body>
