@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UX Bubbles</title>
+        <meta name="description" content="A repository of online UX video resources - talks, sharings, conferences.">
+        <meta name="keywords" content="ux resources, videos,">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="custom.css">
+
+    </head>
+    <body>
+
+        <div class="sidenav">
+            <div class="sidenav-brand">UX Human Library</div>
+            <div id="myBtnContainer">
+                <div class="btn-container">
+                    <button class="btn-filter active" onclick="filterSelection('all')">Show all</button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('figma')">Figma</button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('uxd')">UX Design</button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('researchops')">ResearchOps</button>
+                </div>
+            </div>
+
+        </div>
+          
+        <div class="main">
+            <div class="container">
+                <p></p>
+                <p></p>
+                <p class="intro">This is a collection of free-to-watch UX videos from across the internet. </p>
+            </div>
+    
+            <div class="container">
+    
+                
+                    <div class="filterDiv uxd figma">
+                        <div class="lib-book">
+                            <div class="lib-book-left">
+                                <h6 class="lib-series">UX Evenings at Google</h6>
+                                <h5 class="lib-title">UX & Inclusion - How does UX and inclusion affect the products that we all create?</h5>
+                                <p class="lib-speaker">Margaret Lee (Director of UX Culture and Community, Google), Eyung Lim (Director of Digital Design and Development, GovTech) and Xi Liu (Founder, Ferne Health)</p>
+                                <p class="lib-date">November 2020</p>
+                            </div>
+                            <div class="lib-book-right">
+                                <a href="/" class="lib-btn">Watch</a>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="filterDiv uxd">
+                        <div class="lib-book">
+                            <div class="lib-book-left">
+                                <h6 class="lib-series">Design Buddies</h6>
+                                <h5 class="lib-title">UX/ENG Collaboration: An actionable guide</h5>
+                                <p class="lib-speaker">Xinni C (Senior Designer, Youtube)</p>
+                                <p class="lib-date">October 2020</p>
+                            </div>
+                            <div class="lib-book-right">
+                                <a href="/" class="lib-btn">Watch</a>
+                            </div>                            
+                        </div>
+                    </div>
+            </div>        
+        </div>
+
+        
+        <script src="divfilter.js"></script>
+    </body>
+</html>

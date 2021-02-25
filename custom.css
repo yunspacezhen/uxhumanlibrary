@@ -1,0 +1,273 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+  
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+  
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+  
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1, .h1 {
+    font-size: 2.5rem;
+}
+  
+h2, .h2 {
+    font-size: 2rem;
+}
+  
+h3, .h3 {
+    font-size: 1.75rem;
+}
+  
+h4, .h4 {
+    font-size: 1.5rem;
+}
+  
+h5, .h5 {
+    font-size: 1.25rem;
+}
+  
+h6, .h6 {
+    font-size: 1rem;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+}
+
+
+/* -------- Sidenav -------- */ 
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+  
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    padding: 20px 10px;
+}
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar button.btn-filter {float: left;}
+    .sidebar .btn-container {
+        display: inline-block;
+        border-bottom: none;
+    }
+    div.main {margin-left: 0;}
+}
+  
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+}
+
+/* -------- Filter -------- */ 
+  
+.filterDiv {
+    display: none; /* Hidden by default */
+}
+  
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+  
+/* Style the buttons */
+
+.btn-container {
+    display: block;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.btn-filter {
+    font-family: 'Lato';
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    padding: 22px 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+  
+.btn-filter:hover, .btn-filter:focus {
+    background-color: rgb(212, 212, 212);
+}
+  
+.btn-filter.active {
+    background-color: rgb(136, 136, 136);
+    color: white;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/* -------- top right -------- */ 
+
+.intro {
+    text-align: center;
+}
+
+/* -------- Library Entries -------- */ 
+
+.lib-book {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    background-clip: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.lib-book-left, .lib-book-right {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.lib-book-left {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.lib-book-right {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    text-align: center;
+}
+
+.lib-date {
+    font-size: 0.9rem;
+    color: #7a7a7a;
+}
+
+.lib-series {
+    display: block;
+    color: #BEBEBE;
+}
+
+.lib-title {
+    display: block;
+    font-weight: 600;
+}
+
+.lib-speaker {
+    font-family: 'Lato';
+    font-size: 1rem;
+}
+
+.lib-btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #888888;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.lib-btn:hover {
+    color: #ffffff;
+    background-color: #c9c9c9;
+    text-decoration: none;
+}
