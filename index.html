@@ -10,52 +10,70 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link href="divfilter.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="custom.css">
 
     </head>
-    <body>
-        <div class="container">
-            <h1 class="text-center">UX Human Library</h1>
-            <p class="text-center">This is a collection of free-to-watch UX videos from across the internet. </p>
-        </div>
-
-        <div class="container text-center" id="myBtnContainer">
-            <button class="btn-filter btn-light active" onclick="filterSelection('all')">Show all</button>
-            <button class="btn-filter btn-light" onclick="filterSelection('uxd')">UX Design</button>
-            <button class="btn-filter btn-light" onclick="filterSelection('designsys')">Design Systems</button>
-            <button class="btn-filter btn-light" onclick="filterSelection('handoff')">Dev Handoff</button>
-            <button class="btn-filter btn-light" onclick="filterSelection('figma')">Figma</button>
-            <button class="btn-filter btn-light" onclick="filterSelection('researchops')">ResearchOps</button>
-            <button class="btn-filter btn-light" onclick="filterSelection('uxleader')">UX Leadership</button>
-
-        </div>
-
-        <div class="container">
-            
-            <div id = "session" class="row">
-                <script id ="session-template" type = "text/x-handlebars-template">
-
-                <div class="col-md-4 my-4 filterDiv {{cellsArray.[7]}}">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="lib-series">{{cellsArray.[2]}}</h6>
-                            <h5 class="card-title">{{cellsArray.[0]}}</h5>
-                            <p class="card-text">{{cellsArray.[1]}}</p>
-                            <p class="lib-date">{{cellsArray.[6]}} {{cellsArray.[5]}}</p>
-                            <a href="{{cellsArray.[3]}}" class="btn btn-primary">Watch</a>
-                        </div>
-                    </div>
+    <body onload="filterSelection('all')">
+        
+        <div class="sidenav">
+            <div class="sidenav-brand">UX Human Library</div>
+            <div id="myBtnContainer">
+                <div class="btn-container">
+                    <button class="btn-filter active" onclick="filterSelection('all')">All 'books'</button>
                 </div>
-                </script>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('uxd')">UX Design</button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('designsys')">Design Systems</button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('uxr')">UX Research</button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('researchops')">ResearchOps</button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('uxleader')">UX Leadership</button>
+                </div>
             </div>
 
-        
+        </div>
+          
+        <div class="main">
+            <div class="container">
+                <p></p>
+                <p></p>
+                <p class="intro">This is a collection of free-to-watch UX videos from across the internet. </p>
+            </div>
+    
+            <div class="container">
 
+                <div id="session">
+                    <script id ="session-template" type = "text/x-handlebars-template">
+
+                        <div class="filterDiv {{cellsArray.[7]}}">
+                            <div class="lib-book" onclick="location.href='{{cellsArray.[3]}}';" style="cursor: pointer;">
+                                <div class="lib-book-left">
+                                    <h6 class="lib-series">{{cellsArray.[2]}}</h6>
+                                    <h5 class="lib-title">{{cellsArray.[0]}}</h5>
+                                    <p class="lib-speaker">{{cellsArray.[1]}}</p>
+                                    <p class="lib-date">{{cellsArray.[6]}} {{cellsArray.[5]}}</p>
+                                </div>       
+                                <div class="lib-book-right">
+                                </div>              
+                            </div>
+                        </div>
+                    </script>
+                </div>
+        
+            </div>        
         </div>
 
-        
+        <!-- helpful https://thomas.vanhoutte.be/miniblog/making-a-div-element-clickable-in-html/-->
 
 
         <script type="text/javascript">
@@ -73,12 +91,6 @@
         </script>
         
         <script src="divfilter.js"></script>
-
-        <script>
-            filterSelection("all")
-        </script>
         
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
     </body>
 </html>
