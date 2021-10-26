@@ -17,7 +17,7 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
+    background-color: #FAF8F4;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -103,9 +103,9 @@ h6, .h6 {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(255, 255, 255);
     overflow-x: hidden;
     padding-top: 20px;
+    border-right: 1px solid #0E3E78;
 }
 
 .sidenav-brand {
@@ -113,6 +113,7 @@ h6, .h6 {
     font-weight: 700;
     padding-left: 20px;
     margin-bottom: 20px;
+    color: #0E3E78;
 }
   
 .main {
@@ -147,6 +148,7 @@ h6, .h6 {
     }
 }
 
+
 /* -------- Filter -------- */ 
   
 .filterDiv {
@@ -162,7 +164,6 @@ h6, .h6 {
 
 .btn-container {
     display: block;
-    border-bottom: 1px solid rgb(212, 212, 212);
 }
 
 .btn-filter {
@@ -171,25 +172,40 @@ h6, .h6 {
     border: none;
     outline: none;
     padding: 22px 20px;
-    background-color: #ffffff;
     cursor: pointer;
     width: 100%;
     text-align: left;
+    background-color: #FAF8F4;
+    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 3px 3px;
+  color: #000;
+  text-decoration: none;
 }
-  
+
+
+
 .btn-filter:hover, .btn-filter:focus {
-    background-color: rgb(212, 212, 212);
+/*    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 0 100%;
+    background-size: auto 6px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+    */
 }
   
 .btn-filter.active {
-    background-color: rgb(136, 136, 136);
-    color: white;
+ /*   font-weight: 800;
+    background-image: none;
+    */
 }
 
 button:focus {
     outline: none;
 }
 
+/* hover effect from https://codepen.io/geoffgraham/pen/bxEVEN */
 
 /* -------- top right -------- */ 
 
@@ -206,11 +222,23 @@ button:focus {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     position: relative;
-    background-color: rgb(255, 255, 255);
     background-clip: border-box;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     padding: 1.25rem;
     margin-bottom: 1rem;
+    position: relative;
+}
+
+.lib-book::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #0E3E78;
+    transition: width 1s;
+}
+
+.lib-book:hover::after {
+    width:75%
 }
 
 .lib-book-left, .lib-book-right {
@@ -226,12 +254,7 @@ button:focus {
     max-width: 75%;
 }
 
-.lib-book-right {
-    -ms-flex: 0 0 16.666667%;
-    flex: 0 0 16.666667%;
-    max-width: 16.666667%;
-    text-align: center;
-}
+
 
 .lib-date {
     font-size: 0.9rem;
@@ -246,6 +269,7 @@ button:focus {
 .lib-title {
     display: block;
     font-weight: 600;
+    color: #0E3E78;
 }
 
 .lib-speaker {

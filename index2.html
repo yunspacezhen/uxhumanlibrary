@@ -22,7 +22,7 @@
             <div class="sidenav-brand">UX Human Library</div>
             <div id="myBtnContainer">
                 <div class="btn-container">
-                    <button class="btn-filter active" onclick="filterSelection('all')">Show all</button>
+                    <button class="btn-filter active" onclick="filterSelection('all')">All 'books'</button>
                 </div>
                 <div class="btn-container">
                     <button class="btn-filter" onclick="filterSelection('uxd')">UX Design</button>
@@ -56,16 +56,15 @@
                     <script id ="session-template" type = "text/x-handlebars-template">
 
                         <div class="filterDiv {{cellsArray.[7]}}">
-                            <div class="lib-book">
+                            <div class="lib-book" onclick="location.href='{{cellsArray.[3]}}';" style="cursor: pointer;">
                                 <div class="lib-book-left">
                                     <h6 class="lib-series">{{cellsArray.[2]}}</h6>
                                     <h5 class="lib-title">{{cellsArray.[0]}}</h5>
                                     <p class="lib-speaker">{{cellsArray.[1]}}</p>
                                     <p class="lib-date">{{cellsArray.[6]}} {{cellsArray.[5]}}</p>
-                                </div>
+                                </div>       
                                 <div class="lib-book-right">
-                                    <a href="{{cellsArray.[3]}}" class="lib-btn">Watch</a>
-                                </div>                            
+                                </div>              
                             </div>
                         </div>
                     </script>
@@ -73,6 +72,8 @@
         
             </div>        
         </div>
+
+        <!-- helpful https://thomas.vanhoutte.be/miniblog/making-a-div-element-clickable-in-html/-->
 
 
         <script type="text/javascript">
