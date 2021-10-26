@@ -144,6 +144,10 @@ a:link {
     width: 25rem;
 }
 
+.sidenav a {
+    color: #9D9D9D;
+}
+
 .sidenav a:visited {
     color: #9D9D9D;
 }
@@ -227,11 +231,14 @@ a:link {
 
 
 .btn-filter:hover, .btn-filter:focus {
-    font-weight: 900;
+    font-weight: 700;
+    color: #0E3E78;
+
 }
   
 .btn-filter.active {
-    font-weight: 900;
+    font-weight: 700;
+    color: #0E3E78;
 }
 
 button:focus {
