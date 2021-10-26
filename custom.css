@@ -61,10 +61,15 @@ h6, .h6 {
     font-size: 1rem;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 .container {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    padding-top: 56px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -72,12 +77,14 @@ h6, .h6 {
   @media (min-width: 576px) {
     .container {
       max-width: 540px;
+      padding-top: 30px;
     }
   }
   
   @media (min-width: 768px) {
     .container {
       max-width: 720px;
+      padding-top: 56px;
     }
   }
   
@@ -112,9 +119,45 @@ h6, .h6 {
     font-size: 1.5rem;
     font-weight: 700;
     padding-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     color: #0E3E78;
 }
+
+.sidenav-about {
+    padding: 0px 20px;
+    font-family: 'Lato';
+    font-size: 1rem;
+    font-weight: 400;
+    color: #9D9D9D;
+}
+
+.about-box {
+    display: none;
+    position: fixed;
+    top: 20px;
+    background-color: #FAF8F4;
+    border: 1px solid #0E3E78;
+    color: #212529;
+    padding: 1rem;
+    z-index: 2;
+    text-align: left;
+    width: 25rem;
+}
+
+.sidenav a:visited {
+    color: #9D9D9D;
+}
+
+.sidenav a:hover, .sidenav a:active {
+    cursor: pointer;
+    color: #0E3E78;
+}
+
+.sidenav a:hover+.about-box {
+    display: block;
+}
+
+
   
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
@@ -176,29 +219,19 @@ h6, .h6 {
     width: 100%;
     text-align: left;
     background-color: #FAF8F4;
-    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
-	background-position: 0 100%;
-	background-repeat: repeat-x;
-	background-size: 3px 3px;
-  color: #000;
-  text-decoration: none;
+
+	color: #000;
+	text-decoration: none;
 }
 
 
 
 .btn-filter:hover, .btn-filter:focus {
-/*    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-    background-position: 0 100%;
-    background-size: auto 6px;
-    background-repeat: repeat-x;
-    text-decoration: none;
-    */
+    font-weight: 900;
 }
   
 .btn-filter.active {
- /*   font-weight: 800;
-    background-image: none;
-    */
+    font-weight: 900;
 }
 
 button:focus {
@@ -209,9 +242,6 @@ button:focus {
 
 /* -------- top right -------- */ 
 
-.intro {
-    text-align: center;
-}
 
 /* -------- Library Entries -------- */ 
 
@@ -255,15 +285,11 @@ button:focus {
 }
 
 
-
-.lib-date {
-    font-size: 0.9rem;
-    color: #7a7a7a;
-}
-
 .lib-series {
     display: block;
-    color: #BEBEBE;
+    color: #9D9D9D;
+    font-size: 0.9rem;
+    padding-bottom: 0.6rem;
 }
 
 .lib-title {
@@ -273,8 +299,27 @@ button:focus {
 }
 
 .lib-speaker {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #7F93AB;
+}
+
+.lib-desc {
+    display: block;
     font-family: 'Lato';
     font-size: 1rem;
+    color: #5F5F5F;
+    display: none;
+}
+
+.lib-book:hover .lib-desc {
+    display: block;
+}
+
+.lib-date {
+    font-family: 'Lato';
+    font-size: 1rem;
+    color: #7a7a7a;
 }
 
 .lib-btn {

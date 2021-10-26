@@ -19,7 +19,14 @@
     <body onload="filterSelection('all')">
         
         <div class="sidenav">
-            <div class="sidenav-brand">UX Human Library</div>
+            <a href="/"><div class="sidenav-brand">UX Human Library</div></a>
+            <div class="sidenav-about">
+                <span><a>about</a> 
+                    <div class="about-box"><p>There is no greater resource than the collective knowledge of our fellow humans. Thus this library of talks and conversations archived in free-to-watch videos. </p><p>Many thanks to those who helped to bring this project to life: Jun, Liyu, Yi Jing, Bella, Kamil. </p></div>
+                    &#183; 
+                    <a href="#">contribute</a>
+                </span>
+            </div>
             <div id="myBtnContainer">
                 <div class="btn-container">
                     <button class="btn-filter active" onclick="filterSelection('all')">All 'books'</button>
@@ -37,31 +44,33 @@
                     <button class="btn-filter" onclick="filterSelection('researchops')">ResearchOps</button>
                 </div>
                 <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('uxw')">UX Writing</button>
+                </div>
+                <div class="btn-container">
                     <button class="btn-filter" onclick="filterSelection('uxleader')">UX Leadership</button>
                 </div>
+                <div class="btn-container">
+                    <button class="btn-filter" onclick="filterSelection('uxjobs')">Job Hunting</button>
+                </div>
+
             </div>
 
         </div>
-          
+        
+
         <div class="main">
-            <div class="container">
-                <p></p>
-                <p></p>
-                <p class="intro">This is a collection of free-to-watch UX videos from across the internet. </p>
-            </div>
-    
+            
             <div class="container">
 
                 <div id="session">
                     <script id ="session-template" type = "text/x-handlebars-template">
 
                         <div class="filterDiv {{cellsArray.[7]}}">
-                            <div class="lib-book" onclick="window.open('{{cellsArray.[3]}}', '_blank');" style="cursor: pointer;">
+                            <div class="lib-book" onclick="window.open('{{cellsArray.[4]}}', '_blank');" style="cursor: pointer;">
                                 <div class="lib-book-left">
-                                    <h6 class="lib-series">{{cellsArray.[2]}}</h6>
+                                    <h6 class="lib-series">{{cellsArray.[3]}} // {{cellsArray.[6]}} {{cellsArray.[5]}}</h6>
                                     <h5 class="lib-title">{{cellsArray.[0]}}</h5>
                                     <p class="lib-speaker">{{cellsArray.[1]}}</p>
-                                    <p class="lib-date">{{cellsArray.[6]}} {{cellsArray.[5]}}</p>
                                 </div>       
                                 <div class="lib-book-right">
                                 </div>              
@@ -84,7 +93,7 @@
 
             $('#session').sheetrock({
                 url: Spreadsheet,
-                query: "select A,B,C,E,F,G,H,K order by J desc",
+                query: "select A,B,C,D,F,H,I,L order by J desc",
                 rowTemplate: SessionTemplate
             });
 
